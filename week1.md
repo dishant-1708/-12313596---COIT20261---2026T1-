@@ -8,11 +8,10 @@
 
 ## Student Details
 
-* **Name:** [Your Name]
+* **Name:** Patel Dishant Mahendrakumar
 * **Student ID:** 12313596
-* **Date:** 18 March 2026
-* **Unit:** [Your Unit Code]
-* **Campus:** [Your Campus]
+* **Unit:** COIT20261
+* **Campus:** MELBOURNE
 
 ---
 
