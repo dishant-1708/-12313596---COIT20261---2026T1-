@@ -14,13 +14,13 @@
 
 ---
 
-## 📌 Objective
+## Objective
 
 The objective of this project is to create a basic GNS3 network with a single Linux host, configure a static IP address, and verify the configuration using the console.
 
 ---
 
-## 🖥️ Network Setup
+## Network Setup
 
 * One **Linux Host** node was added to the workspace.
 * Project title and student details were displayed using text annotations.
@@ -32,7 +32,7 @@ The objective of this project is to create a basic GNS3 network with a single Li
 
 ---
 
-## ⚙️ Configuration Steps
+## Configuration Steps
 
 ### 1. Static IP Configuration
 
@@ -87,7 +87,7 @@ Output confirmed:
 
 ---
 
-## 🧠 Learnings
+## Learnings
 
 * Learned how to create and name a project in GNS3
 * Understood how to add and configure a Linux host
@@ -97,7 +97,7 @@ Output confirmed:
 
 ---
 
-## 🛠️ Commands Used
+## Commands Used
 
 * Edit network config:
 
@@ -117,7 +117,7 @@ Output confirmed:
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 The project was successfully completed. The Linux host was configured with a static IP address and verified through the console. All required outputs, including screenshots and configuration steps, were completed.
 
