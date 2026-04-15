@@ -4,6 +4,8 @@
 
 **GNS3-Intro-12313596**
 
+---
+
 ## Student Details
 
 * **Name:** [Your Name]
@@ -16,27 +18,27 @@
 
 ## Objective
 
-The objective of this project is to create a basic GNS3 network with a single Linux host, configure a static IP address, and verify the configuration using the console.
+The goal of this project was to get familiar with GNS3 by creating a simple network using a single Linux host. I configured a static IP address and verified that everything was working correctly using the console.
 
 ---
 
 ## Network Setup
 
-* One **Linux Host** node was added to the workspace.
-* Project title and student details were displayed using text annotations.
-* The selected IP address for the host:
+For this task, I created a very basic setup with just one Linux host. I also added text labels in the workspace to clearly show the project title and my details.
 
-  ```
-  10.10.1.1
-  ```
+The IP address I chose for the host was:
+
+```
+10.10.1.1
+```
 
 ---
 
 ## Configuration Steps
 
-### 1. Static IP Configuration
+### 1. Setting a Static IP Address
 
-The following configuration was added to the `/etc/network/interfaces` file **before starting the node**:
+Before starting the node, I edited the `/etc/network/interfaces` file and added the following configuration:
 
 ```
 auto eth0
@@ -45,70 +47,70 @@ iface eth0 inet static
     netmask 255.255.255.0
 ```
 
----
-
-### 2. Start Node
-
-* The Linux host was started successfully from GNS3.
+This ensures the device always uses the same IP address.
 
 ---
 
-### 3. Open Console
+### 2. Starting the Node
 
-* A web console was opened in a new tab.
+After saving the configuration, I started the Linux host in GNS3.
 
 ---
 
-### 4. Verify IP Address
+### 3. Opening the Console
 
-Command used:
+I opened the web console in a new tab to interact with the host.
+
+---
+
+### 4. Verifying the IP Address
+
+To confirm the configuration worked, I ran:
 
 ```
 ip addr
 ```
 
-Output confirmed:
-
-* Interface `eth0` assigned IP address **10.10.1.1**
+The output showed that the `eth0` interface was correctly assigned the IP address **10.10.1.1**.
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### 🔹 Network Topology
+### Network Topology
 
 ![Network Screenshot](images/GNS-Intro-12313596-network.png)
 
 ---
 
-### 🔹 IP Address Verification
+### IP Address Verification
 
 ![IP Address Screenshot](images/GNS-Intro-12313596-ipaddress.png)
 
 ---
 
-## Learnings
+## What I Learned
 
-* Learned how to create and name a project in GNS3
-* Understood how to add and configure a Linux host
-* Learned how to assign a static IP using `/etc/network/interfaces`
-* Gained experience using the console to verify network configuration
-* Understood the importance of configuring network settings **before booting the node**
+This project helped me understand the basics of using GNS3. I learned how to create and organise a project, add a Linux host, and configure its network settings.
+
+I also got hands-on experience editing system files, assigning a static IP address, and using the terminal to verify configurations. One important takeaway was that network settings need to be configured before starting the device, otherwise they won’t apply correctly.
 
 ---
 
 ## Commands Used
 
-* Edit network config:
+* Edit network configuration:
 
   ```
   nano /etc/network/interfaces
   ```
-* Restart networking:
+
+* Restart networking service:
 
   ```
   /etc/init.d/networking restart
   ```
+
 * Check IP address:
 
   ```
@@ -119,6 +121,6 @@ Output confirmed:
 
 ## Conclusion
 
-The project was successfully completed. The Linux host was configured with a static IP address and verified through the console. All required outputs, including screenshots and configuration steps, were completed.
+Overall, the project was completed successfully. The Linux host was configured with a static IP address, and the setup was verified through the console. This exercise provided a solid introduction to basic networking in GNS3.
 
 ---
