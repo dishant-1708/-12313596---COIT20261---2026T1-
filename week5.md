@@ -48,8 +48,8 @@ Last three digits: **596**
 
 | VLAN     | Hosts          |
 | -------- | -------------- |
-| VLAN 10 | Host A, Host B |
-| VLAN 20 | Host C, Host D |
+| VLAN 96 | Host A, Host B |
+| VLAN 97 | Host C, Host D |
 
 ---
 
@@ -64,10 +64,10 @@ ovs-vsctl add-br switch
 Assign ports:
 
 ```bash id="vlan2"
-ovs-vsctl add-port switch eth1 tag=10
-ovs-vsctl add-port switch eth2 tag=10
-ovs-vsctl add-port switch eth3 tag=20
-ovs-vsctl add-port switch eth4 tag=20
+ovs-vsctl add-port switch eth1 tag=96
+ovs-vsctl add-port switch eth2 tag=96
+ovs-vsctl add-port switch eth3 tag=97
+ovs-vsctl add-port switch eth4 tag=97
 ```
 
 ---
