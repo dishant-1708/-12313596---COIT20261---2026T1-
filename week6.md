@@ -1,11 +1,5 @@
 
 
-# 📡 Week 06 Tutorial Report
-
-**Student ID:** <your-student-id>
-**Course:** Computer Networks
-
----
 
 # 🔹 Task 1: Resolving IP Addresses to Hardware Addresses (ARP)
 
