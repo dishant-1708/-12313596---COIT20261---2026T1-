@@ -1,2 +1,2 @@
 
-![class test](/Setting-IP-12313596-network.png)
+![class test](/In-class Lab Test 1 Report - 12313596.docx)
