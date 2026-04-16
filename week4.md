@@ -174,13 +174,12 @@ show ip ospf database
 
 ### Routing Summary Table
 
-| Router | Destination  | Next Node |
-| ------ | ------------ | --------- |
-| R1     | 10.10.2.0/24 | via R2    |
-| R1     | 10.10.3.0/24 | via R3    |
-| R2     | 10.10.1.0/24 | via R1    |
-| R2     | 10.10.3.0/24 | via R3    |
-
+| Router | Destination Network | Next Hop |
+|--------|--------------------|----------|
+| FRR1   | 10.10.4.0/24       | FRR2 or FRR3 |
+| FRR2   | 10.10.1.0/24       | FRR1 |
+| FRR3   | 10.10.4.0/24       | FRR4 |
+| FRR4   | 10.10.1.0/24       | FRR2 or FRR3 |
 
 
 ---
