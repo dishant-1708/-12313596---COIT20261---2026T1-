@@ -29,7 +29,7 @@ Example addressing:
 
 ### Network Diagram
 
-![Network Topology](View-Routes-12313596-network.png)
+![Network Topology](images/View-Routes-12313596-network.png)
 
 ---
 
