@@ -190,7 +190,7 @@ show ip ospf database
 traceroute <destination-ip>
 ```
 
-![Traceroute Before](OSPF-Basics-12313596-trace-before.png)
+![Traceroute Before](images/OSPF-Basics-12313596-trace-before.png)
 
 ---
 
@@ -206,7 +206,7 @@ traceroute <destination-ip>
 traceroute <destination-ip>
 ```
 
-![Traceroute After](OSPF-Basics-12313596-trace-after.png)
+![Traceroute After](images/OSPF-Basics-12313596-trace-after.png)
 
 ---
 
