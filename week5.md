@@ -79,8 +79,6 @@ ping 10.10.1.97
 ping 10.10.1.98
 ```
 
-(All hosts should communicate)
-
 ---
 
 ## Connectivity Test (After VLANs)
