@@ -48,8 +48,8 @@ Last three digits: **596**
 
 | VLAN     | Hosts          |
 | -------- | -------------- |
-| VLAN 596 | Host A, Host B |
-| VLAN 597 | Host C, Host D |
+| VLAN 96 | Host A, Host B |
+| VLAN 97 | Host C, Host D |
 
 ---
 
@@ -64,10 +64,10 @@ ovs-vsctl add-br switch
 Assign ports:
 
 ```bash id="vlan2"
-ovs-vsctl add-port switch eth1 tag=596
-ovs-vsctl add-port switch eth2 tag=596
-ovs-vsctl add-port switch eth3 tag=597
-ovs-vsctl add-port switch eth4 tag=597
+ovs-vsctl add-port switch eth1 tag=96
+ovs-vsctl add-port switch eth2 tag=96
+ovs-vsctl add-port switch eth3 tag=97
+ovs-vsctl add-port switch eth4 tag=97
 ```
 
 ---
@@ -144,10 +144,10 @@ To enable communication between VLANs using a router (Router-on-a-Stick).
 
 | Host   | VLAN     | IP Address    |
 | ------ | -------- | ------------- |
-| Host A | VLAN 596 | 10.10.1.96/24 |
-| Host B | VLAN 596 | 10.10.1.97/24 |
-| Host C | VLAN 597 | 10.10.2.96/24 |
-| Host D | VLAN 597 | 10.10.2.97/24 |
+| Host A | VLAN 96 | 10.10.1.96/24 |
+| Host B | VLAN 96 | 10.10.1.97/24 |
+| Host C | VLAN 97 | 10.10.2.96/24 |
+| Host D | VLAN 97 | 10.10.2.97/24 |
 
 ---
 
@@ -155,10 +155,10 @@ To enable communication between VLANs using a router (Router-on-a-Stick).
 
 ```bash id="vlan3"
 ovs-vsctl add-br switch
-ovs-vsctl add-port switch eth1 tag=596
-ovs-vsctl add-port switch eth2 tag=596
-ovs-vsctl add-port switch eth3 tag=597
-ovs-vsctl add-port switch eth4 tag=597
+ovs-vsctl add-port switch eth1 tag=96
+ovs-vsctl add-port switch eth2 tag=96
+ovs-vsctl add-port switch eth3 tag=97
+ovs-vsctl add-port switch eth4 tag=97
 ```
 
 ---
@@ -167,7 +167,7 @@ ovs-vsctl add-port switch eth4 tag=597
 
 ```bash id="trunk1"
 ovs-vsctl set port eth0 vlan_mode=trunk
-ovs-vsctl set port eth0 trunks=596,597
+ovs-vsctl set port eth0 trunks=96,97
 ```
 
 ---
@@ -177,23 +177,23 @@ ovs-vsctl set port eth0 trunks=596,597
 On Linux Router:
 
 ```bash id="router1"
-ip link add link eth0 name eth0.596 type vlan id 596
-ip link add link eth0 name eth0.597 type vlan id 597
+ip link add link eth0 name eth0.96 type vlan id 96
+ip link add link eth0 name eth0.97 type vlan id 97
 ```
 
 Assign IPs:
 
 ```bash id="router2"
-ip addr add 10.10.1.1/24 dev eth0.596
-ip addr add 10.10.2.1/24 dev eth0.597
+ip addr add 10.10.1.1/24 dev eth0.96
+ip addr add 10.10.2.1/24 dev eth0.97
 ```
 
 Enable interfaces:
 
 ```bash id="router3"
 ip link set eth0 up
-ip link set eth0.596 up
-ip link set eth0.597 up
+ip link set eth0.96 up
+ip link set eth0.97 up
 ```
 
 ---
