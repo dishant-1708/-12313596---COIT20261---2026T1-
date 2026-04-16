@@ -181,7 +181,7 @@ show ip ospf database
 | R2     | 10.10.1.0/24 | via R1    |
 | R2     | 10.10.3.0/24 | via R3    |
 
-*(Adjust based on your actual outputs)*
+
 
 ---
 
