@@ -227,7 +227,7 @@ ping 10.10.2.96
 
 ## Switch Ports and VLAN Tags
 
-![VLAN Router Ports](images/Vlan-Router-12313596-ports.png)
+![VLAN Router Ports](images/image2.jpeg)
 
 ---
 
