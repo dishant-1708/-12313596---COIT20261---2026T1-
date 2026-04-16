@@ -100,19 +100,19 @@ ip address show
 
 #### Host A Output
 
-![Host A IP](Setting-IP-12313596-host1.png)
+![Host A IP](images/Setting-IP-12313596-host1.png)
 
 #### Host B Output
 
-![Host B IP](Setting-IP-12313596-host2.png)
+![Host B IP](images/Setting-IP-12313596-host2.png)
 
 #### Host C Output
 
-![Host C IP](Setting-IP-12313596-host3.png)
+![Host C IP](images/Setting-IP-12313596-host3.png)
 
 #### Host D Output
 
-![Host D IP](Setting-IP-12313596-host4.png)
+![Host D IP](images/Setting-IP-12313596-host4.png)
 
 ---
 
