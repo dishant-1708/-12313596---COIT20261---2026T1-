@@ -34,10 +34,10 @@ All hosts in same subnet:
 
 | Host   | IP Address    |
 | ------ | ------------- |
-| Host A | 10.10.1.10/24 |
-| Host B | 10.10.1.11/24 |
-| Host C | 10.10.1.12/24 |
-| Host D | 10.10.1.13/24 |
+| Host A | 10.10.1.96/24 |
+| Host B | 10.10.1.97/24 |
+| Host C | 10.10.1.98/24 |
+| Host D | 10.10.1.99/24 |
 
 ---
 
@@ -75,8 +75,8 @@ ovs-vsctl add-port switch eth4 tag=597
 ## Connectivity Test (Before VLANs)
 
 ```bash id="ping1"
-ping 10.10.1.11
-ping 10.10.1.12
+ping 10.10.1.97
+ping 10.10.1.98
 ```
 
 (All hosts should communicate)
@@ -146,10 +146,10 @@ To enable communication between VLANs using a router (Router-on-a-Stick).
 
 | Host   | VLAN     | IP Address    |
 | ------ | -------- | ------------- |
-| Host A | VLAN 596 | 10.10.1.10/24 |
-| Host B | VLAN 596 | 10.10.1.11/24 |
-| Host C | VLAN 597 | 10.10.2.10/24 |
-| Host D | VLAN 597 | 10.10.2.11/24 |
+| Host A | VLAN 596 | 10.10.1.96/24 |
+| Host B | VLAN 596 | 10.10.1.97/24 |
+| Host C | VLAN 597 | 10.10.2.96/24 |
+| Host D | VLAN 597 | 10.10.2.97/24 |
 
 ---
 
@@ -205,13 +205,13 @@ ip link set eth0.597 up
 ### Same VLAN:
 
 ```bash id="ping2"
-ping 10.10.1.11
+ping 10.10.1.97
 ```
 
 ### Cross VLAN (via router):
 
 ```bash id="ping3"
-ping 10.10.2.10
+ping 10.10.2.96
 ```
 
 ---
