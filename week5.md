@@ -104,7 +104,7 @@ arp -n
 
 ## Switch Ports and VLAN Tags
 
-![VLAN Ports](images/Vlan-Basics-12313596-ports.png)
+![VLAN Router Ports](images/Vlan-Router-12313596-ports.png)
 
 ---
 
