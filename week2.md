@@ -136,7 +136,7 @@ Stop after at least 5 replies (Ctrl + C).
 
 #### Output Screenshot
 
-![Basic Ping](Ping-Basics-12313596-simple.png)
+![Basic Ping](images/Ping-Basics-12313596-simple.png)
 
 ---
 
@@ -148,7 +148,7 @@ ping 10.10.1.200
 
 #### Output Screenshot
 
-![Ping Error](Ping-Basics-12313596-error.png)
+![Ping Error](images/Ping-Basics-12313596-error.png)
 
 ---
 
@@ -160,7 +160,7 @@ ping -c 5 -i 0.5 -s 1000 10.10.1.97
 
 #### Output Screenshot
 
-![Ping Options](Ping-Basics-12313596-options.png)
+![Ping Options](images/Ping-Basics-12313596-options.png)
 
 ---
 
