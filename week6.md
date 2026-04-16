@@ -208,7 +208,7 @@ ping 10.10.2.10
 
 ## Network Screenshot
 
-![Default Gateway Network](images/Default-Gateway-12313596-network.png)
+![Default Gateway Network](images/Default-Gateway-12313596-network.JPEG)
 
 ---
 
