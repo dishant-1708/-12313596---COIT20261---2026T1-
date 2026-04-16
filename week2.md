@@ -1,12 +1,3 @@
-Here is your **updated Markdown report** with:
-
-* Your actual IP addresses
-* Your student ID
-* Clearly placed image placeholders at the exact required sections
-
-You can copy this directly into a `.md` file.
-
----
 
 # Setting-IP-12313596 and Ping Basics Report
 
