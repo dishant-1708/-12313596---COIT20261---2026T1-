@@ -1,242 +1,232 @@
 
-Below is a **clean Markdown (.md) template** you can directly use for both tasks. I also placed **image paths exactly where your report needs them**.
+
+# 📡 Week 06 Tutorial Report
+
+**Student ID:** <your-student-id>
+**Course:** Computer Networks
 
 ---
 
-# ARP and Default Gateway Report - 12313596
-
----
-
-# Task 1: Resolving IP Addresses to Hardware Addresses (ARP)
+# 🔹 Task 1: Resolving IP Addresses to Hardware Addresses (ARP)
 
 ## Aim
 
-To understand how ARP maps IP addresses to MAC addresses in a LAN.
+To observe how Address Resolution Protocol (ARP) maps IP addresses to MAC (hardware) addresses within a Local Area Network (LAN).
 
 ---
 
-## Network Setup
+## Method
 
-* 4 × Linux Hosts (Host A, B, C, D)
-* 1 × Ethernet Switch
-* All hosts in same subnet (e.g. `10.10.1.0/24`)
+1. Opened project: `Setting-IP-<studentid>`
 
----
+2. Ensured all hosts (A, B, C, D) had IP addresses
 
-## IP Addressing
+3. Checked ARP table on Host A using:
 
-| Host   | IP Address |
-| ------ | ---------- |
-| Host A | 10.10.1.96 |
-| Host B | 10.10.1.97 |
-| Host C | 10.10.1.98 |
-| Host D | 10.10.1.99 |
+   ```bash
+   ip neigh show
+   ```
 
----
+4. Pinged Host B from Host A:
 
-## Step 1: View ARP Table (Initial State)
+   ```bash
+   ping <HostB-IP>
+   ```
 
-Run on Host A:
+5. Checked ARP table again
 
-```bash id="arp1"
-ip neigh
-```
+6. Pinged Host A from Host C
 
-![ARP Table Initial](images/ARP-Basics-12313596-hostA-table1.png)
-
----
-
-## Step 2: Ping Host B from Host A
-
-```bash id="arp2"
-ping 10.10.1.97
-```
-
----
-
-## Step 3: View ARP Table Again (After Ping)
-
-```bash id="arp3"
-ip neigh
-```
-
-![ARP Table After Host B](images/ARP-Basics-12313596-hostA-table2.png)
-
----
-
-## Step 4: Ping Host A from Host C
-
-On Host C:
-
-```bash id="arp4"
-ping 10.10.1.96
-```
-
----
-
-## Step 5: View ARP Table on Host A Again
-
-```bash id="arp5"
-ip neigh
-```
-
-![ARP Table After Host C](images/ARP-Basics-12313596-hostA-table3.png)
+7. Checked ARP table again
 
 ---
 
 ## Observations
 
-* ARP table is updated only after communication
-* MAC addresses are learned dynamically
-* Entries may show state like REACHABLE or STALE
+### Initial ARP Table (Host A)
+
+* ARP table was empty or had very few entries
+* No mappings for other hosts initially
 
 ---
 
-## Conclusion
+### After Ping (Host A → Host B)
 
-ARP dynamically maps IP addresses to MAC addresses when communication occurs.
+Example output:
+
+```bash
+192.168.1.2 dev eth0 lladdr aa:bb:cc:dd:ee:01 REACHABLE
+```
+
+**Explanation:**
+
+* 192.168.1.2 → IP address of Host B
+* lladdr → MAC address of Host B
+* REACHABLE → Entry is active and recently used
 
 ---
 
+### After Ping (Host C → Host A)
+
+Example output:
+
+```bash
+192.168.1.3 dev eth0 lladdr aa:bb:cc:dd:ee:02 STALE
+```
+
+**Explanation:**
+
+* Host A learned Host C’s MAC address
+* STALE → Entry not recently used but still valid
+
 ---
 
-# Task 2: Default Gateways
+## Key Learnings
+
+* ARP resolves IP addresses to MAC addresses automatically
+* Entries are created during communication
+* ARP entries expire over time
+* ARP operates in the background
+
+---
+
+## Screenshots
+
+/images/ARP-Basics-HostA-Table1.png
+/images/ARP-Basics-HostA-Table2.png
+/images/ARP-Basics-HostA-Table3.png
+
+---
+
+# 🔹 Task 2: Default Gateways
 
 ## Aim
 
-To configure default gateways and enable routing between multiple subnets.
+To configure default gateways and enable communication between different subnets
 
 ---
 
 ## Network Topology
 
-* 4 × Linux Hosts
-* 2 × Linux Routers
-* 2 × Switches
-* 3 Subnets total
+* Subnet 1: Host A, Host B → Router 1 (via Switch 1)
+* Subnet 2: Host C, Host D → Router 2 (via Switch 2)
+* Subnet 3: Router 1 ↔ Router 2
 
 ---
 
-## Network Diagram
+## Configuration
 
-![Default Gateway Network](images/Default-Gateway-12313596-network.jpeg)
+### Host Configuration Example
 
----
+File: `/etc/network/interfaces`
 
-## IP Addressing Scheme (Example)
-
-### Subnet 1 (Router 1 LAN)
-
-| Device   | IP         |
-| -------- | ---------- |
-| Host A   | 10.10.1.10 |
-| Host B   | 10.10.1.11 |
-| Router 1 | 10.10.1.1  |
-
----
-
-### Subnet 2 (Router 2 LAN)
-
-| Device   | IP         |
-| -------- | ---------- |
-| Host C   | 10.10.2.10 |
-| Host D   | 10.10.2.11 |
-| Router 2 | 10.10.2.1  |
-
----
-
-### Subnet 3 (Router Interconnection)
-
-| Device   | IP        |
-| -------- | --------- |
-| Router 1 | 10.10.3.1 |
-| Router 2 | 10.10.3.2 |
-
----
-
-## Default Gateway Configuration
-
-On hosts (`/etc/network/interfaces`):
-
-```bash id="gw1"
-gateway 10.10.1.1
-```
-
-or
-
-```bash id="gw2"
-gateway 10.10.2.1
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.168.1.10
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    up sysctl net.ipv4.ip_forward=0
 ```
 
 ---
 
-## Enable Routing (Routers)
+### Router 1 Configuration
 
-```bash id="gw3"
-echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.168.1.1
+    netmask 255.255.255.0
+
+auto eth1
+iface eth1 inet static
+    address 10.0.0.1
+    netmask 255.255.255.0
+    up sysctl net.ipv4.ip_forward=1
 ```
 
 ---
 
-## Disable Routing (Hosts)
+### Router 2 Configuration
 
-```bash id="gw4"
-echo 0 | sudo tee /proc/sys/net/ipv4/ip_forward
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.168.2.1
+    netmask 255.255.255.0
+
+auto eth1
+iface eth1 inet static
+    address 10.0.0.2
+    netmask 255.255.255.0
+    up sysctl net.ipv4.ip_forward=1
 ```
 
 ---
 
 ## Routing Tables
 
-Run on all devices:
+Command:
 
-```bash id="gw5"
-ip route
+```bash
+ip route show
+```
+
+### Example (Host A)
+
+```bash
+default via 192.168.1.1 dev eth0
+192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.10
 ```
 
 ---
 
-## Connectivity Test (Ping)
+### Example (Router 1)
 
-From Host A to Host C:
-
-```bash id="gw6"
-ping 10.10.2.10
+```bash
+192.168.1.0/24 dev eth0
+10.0.0.0/24 dev eth1
+192.168.2.0/24 via 10.0.0.2
 ```
 
 ---
 
-## Network Screenshot
+## Connectivity Test
+
+Command:
+
+```bash
+ping 192.168.2.10
+```
+
+Successful ping confirms:
+
+* Routing is working
+* Default gateway is correctly configured
+* Routers are forwarding packets
+
+---
+
+## Key Learnings
+
+* Default gateways allow communication outside a subnet
+* Routers must have IP forwarding enabled
+* Routing tables define packet paths
+* Inter-network communication requires proper configuration
+
+---
+
+## Screenshots
 
 ![Default Gateway Network](images/Default-Gateway-12313596-network.jpeg)
+/images/Default-Gateway-ping.png
 
 ---
 
-## Ping Success Screenshot
+# Conclusion
 
-![Ping Result](images/Default-Gateway-12313596-ping.png)
+* ARP enables IP-to-MAC mapping within a LAN
+* Default gateways enable communication between networks
+* Proper IP, routing, and forwarding configuration is essential
 
----
-
-## Outputs Checklist
-
-* Project file: `Default-Gateway-12313596.gns3project`
-* Network diagram: `Default-Gateway-12313596-network.png`
-* ARP table screenshots
-* Routing tables
-* Successful ping screenshot
-
----
-
-## Conclusion
-
-* ARP resolves IP → MAC within LAN
-* Default gateway enables communication across subnets
-* Routers forward traffic between networks
-
----
-
-If you want, I can next:
-✔ correct your exact IP plan for this topology
-✔ or draw a clean diagram layout for GNS3 (so your screenshot looks perfect for marks)
-✔ or help you understand default gateway vs OSPF difference (exam question favourite)
