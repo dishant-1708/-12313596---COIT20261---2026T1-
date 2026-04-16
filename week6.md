@@ -119,7 +119,7 @@ To configure default gateways and enable routing between multiple subnets.
 
 ## Network Diagram
 
-![Default Gateway Network](images/Default-Gateway-12313596-network.png)
+![Default Gateway Network](images/Default-Gateway-12313596-network.jpeg)
 
 ---
 
