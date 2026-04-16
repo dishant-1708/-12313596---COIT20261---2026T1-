@@ -132,7 +132,7 @@ To observe how dynamic routing works and adapts to network changes.
 
 ### Network Diagram
 
-![OSPF Network](OSPF-Basics-12313596-network.png)
+![OSPF Network](images/OSPF-Basics-12313596-network.png)
 
 ---
 
