@@ -24,7 +24,7 @@ To configure static IP addresses on Linux hosts using three different methods.
 
 ### Network Diagram
 
-![Network Topology](Setting-IP-12313596-network.png)
+![Network Topology](images/Setting-IP-12313596-network.png)
 
 ---
 
