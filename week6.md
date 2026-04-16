@@ -221,7 +221,7 @@ Successful ping confirms:
 
 ![Default Gateway Network](images/Default-Gateway-12313596-network.jpeg)
 ![Default Gateway ping](images/Default-Gateway-ping.jpeg)
-![Default Gateway arp](images/Default-Gateway-arp.jpeg)
+![Default Gateway arp](images/Default-Gateway-arp.png)
 
 
 ---
