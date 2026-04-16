@@ -75,25 +75,25 @@ ip route show
 
 #### Host A Routing Table
 
-![Host A Routes](View-Routes-12313596-hostA-routes.png)
+![Host A Routes](images/View-Routes-12313596-hostA-routes.png)
 
 ---
 
 #### Host B Routing Table
 
-![Host B Routes](View-Routes-12313596-hostB-routes.png)
+![Host B Routes](images/View-Routes-12313596-hostB-routes.png)
 
 ---
 
 #### Host C Routing Table
 
-![Host C Routes](View-Routes-12313596-hostC-routes.png)
+![Host C Routes](images/View-Routes-12313596-hostC-routes.png)
 
 ---
 
 #### Router Routing Table
 
-![Router Routes](View-Routes-12313596-router-routes.png)
+![Router Routes](images/View-Routes-12313596-router-routes.png)
 
 ---
 
