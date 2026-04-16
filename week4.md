@@ -156,7 +156,7 @@ show ip ospf database
 
 ### Neighbour Routers (FRR1)
 
-![FRR1 Neighbours](OSPF-Basics-12313596-neighbours.png)
+![FRR1 Neighbours](images/OSPF-Basics-12313596-neighbours.png)
 
 ---
 
@@ -164,11 +164,11 @@ show ip ospf database
 
 #### Router 1
 
-![Router1 Routes](OSPF-Basics-12313596-router1.png)
+![Router1 Routes](images/OSPF-Basics-12313596-router1.png)
 
 #### Router 2
 
-![Router2 Routes](OSPF-Basics-12313596-router2.png)
+![Router2 Routes](images/OSPF-Basics-12313596-router2.png)
 
 ---
 
