@@ -37,11 +37,11 @@ Example addressing:
 
 | Device | Interface | IP Address    |
 | ------ | --------- | ------------- |
-| Host A | eth0      | 10.10.1.10/24 |
-| Host B | eth0      | 10.10.1.11/24 |
+| Host A | eth0      | 10.10.1.96/24 |
+| Host B | eth0      | 10.10.1.97/24 |
 | Router | eth0      | 10.10.1.1/24  |
 | Router | eth1      | 10.10.2.1/24  |
-| Host C | eth0      | 10.10.2.10/24 |
+| Host C | eth0      | 10.10.2.98/24 |
 
 ---
 
